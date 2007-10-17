@@ -7,10 +7,10 @@ use Carp;
 use Exporter;
 use IO::File;
 
-our ($VERSION, @ISA, @EXPORT_OK);
+use vars qw($VERSION @ISA @EXPORT_OK);
 @ISA = qw/Exporter/;
 @EXPORT_OK = qw/read_config_file/;
-$VERSION='1.4';
+$VERSION='1.41';
 
 
 sub read_config_file($) {
