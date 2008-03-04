@@ -10,7 +10,7 @@ use IO::File;
 use vars qw($VERSION @ISA @EXPORT_OK);
 @ISA = qw/Exporter/;
 @EXPORT_OK = qw/read_config_file/;
-$VERSION='1.41';
+$VERSION='1.42';
 
 
 sub read_config_file($) {
@@ -48,6 +48,7 @@ sub read_config_file($) {
         $conf_data =~ s!([\\\'])!\\$1!g;
         eval "$conf_ele = '$conf_data'";
     }
+    $fh->close;
 
     return $conf;
 }
